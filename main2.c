@@ -14,11 +14,11 @@ int main(int argc, char **argv)
     int i, j;
     int k = 0;
     int vizinhos = 0;
-    int geracoes = atoi(argv[1]);
+    int geracoes = atoi(argv[2]);
 
     //Arquivo txt
     FILE *arq;
-    arq = fopen("quadro.txt","r");
+    arq = fopen(argv[1],"r");
 
     //Lendo Matriz do arquivo
     for (i = 0; i < 30; i++)
@@ -94,7 +94,6 @@ int main(int argc, char **argv)
             }
         }
 
-        //criar funcao para copia de matriz;
         for (i = 1; i < 31; i++)
         {    
             for (j = 1; j < 31; j++)
@@ -103,7 +102,7 @@ int main(int argc, char **argv)
             }
         }  
 
-        system("pause");
+        sleep(1);
         system("cls");
 
         imprimir(borda,1,31);
@@ -119,7 +118,7 @@ void imprimir(char **matriz, int inicio, int fim)
     {
         for (int j = inicio; j < fim; j++)
         {
-            printf("%c ", matriz[i][j]);
+            printf("%c ", matriz[i][j] - '0' + 177);
         }
         printf("\n");
     }
