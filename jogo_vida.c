@@ -103,7 +103,7 @@ int main(int argc, char **argv)
         }  
 
         sleep(1);
-        system("cls");
+        system("clear");
 
         imprimir(borda,1,31);
         k++;
